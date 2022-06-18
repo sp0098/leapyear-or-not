@@ -1,52 +1,27 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+int main() {
+   int year;
+   printf("Enter a year: ");
+   scanf("%d", &year);
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+   // leap year if perfectly divisible by 400
+   if (year % 400 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   // not a leap year if divisible by 100
+   // but not divisible by 400
+   else if (year % 100 == 0) {
+      printf("%d is not a leap year.", year);
+   }
+   // leap year if not divisible by 100
+   // but divisible by 4
+   else if (year % 4 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   // all other years are not leap years
+   else {
+      printf("%d is not a leap year.", year);
+   }
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+   return 0;
+}
